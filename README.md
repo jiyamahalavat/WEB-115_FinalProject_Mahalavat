@@ -1,4 +1,4 @@
-# Custom Tournament Bracket Builder
+# To Do List
 **WEB-115 Final Project Proposal**
 Student: Jiya Mahalavat | Repo: `WEB-115_FinalProject_Mahalavat`
 
@@ -6,49 +6,43 @@ Student: Jiya Mahalavat | Repo: `WEB-115_FinalProject_Mahalavat`
 
 ## Overview
 
-This is a web app that lets users build a custom study schedule based on their needs and priorities. Users can insert what tasks they have to do and sort them by urgency and duration. 
-The if statements and loops can be used to iterate through what the user selects and what the user wants to do. All tasks will be stored in localStorage using JSON. 
+This project is a web-based to do list application that helps users organize tasks based on urgency, priority, and estimated time. Users can input tasks and manage them through an interactive interface 
+that updates dynamically as they add, complete or delete items. The app will go beyond a basic to do list by allowing tasks to be sorted and prioritized, helping users focus on what needs to be done first.
 
-The target user would be students, whether they're studying in university or middle and high school. Students can use this planner if they're studying for their next exam or if they're studying for 
-anything in general. Also, people can use this as a regular planner that helps them manage and organize their daily lives, so this planner can be used as a general planner (not just for studying). 
+The target users are students, including middle school, high school, and college students, who need a simple way to keep track of assignments, studying, and responsibilities. However, the app can also be used by anyone who wants a structured and interactive to-do list to manage daily tasks more efficiently.
 
 ---
 
 ## Features
 
-- Create a new named tournament and add up to 16 contestants.
-- App auto-generates a balanced single-elimination bracket from the entry list.
-- Click to select the winner of each match and advance them to the next round.
-- Bracket updates in real time as winners are chosen — completed matches are visually locked and greyed out.
-- A champion screen appears when the final match is decided.
-- All tournament state is saved to `localStorage` — progress survives a page refresh.
-- Users can reset a tournament to start over or delete it entirely.
-
+- Add tasks with details (name, due date, priority, time estimate)
+- Mark tasks as complete
+- Delete tasks
+- View tasks in an organized list
+- Visual progress indicator (e.g., completion percentage)
+- Tasks can be sorted or prioritized
 ---
 
 ## Core Requirements Coverage
 
 | Requirement | Implementation |
 |---|---|
-| **If Statements & Loops** | Generating the bracket requires looping over contestants to pair them into first-round matches. If statements determine whether a round is complete (all winners chosen) before unlocking the next round, and check edge cases like odd contestant counts or a bye slot. |
-| **Event Listeners** | Click listeners on each match card select the winner and trigger a re-render. A submit listener on the setup form kicks off bracket generation. A reset button clears state after a confirmation check. |
-| **DOM Element Creation** | The entire bracket (every round column, match card, contestant name label, and winner indicator) is built dynamically with `createElement` and `appendChild`. Nothing is hardcoded in the HTML beyond the app shell. |
-| **Classes & Subclasses** | The base class will be a class for the overall planner and will have many subclasses which basically will add on to the elements of the planner. So the base class will be called
-"class Planner" and that will be used to fullfil its purpose.  |
+| **If Statements & Loops** |If statements check if a task is complete. If statements assign priority levels. Loops go through all tasks in the list. Those loops update and display tasks. |
+| **Event Listeners** | Event listeners detect button clicks. They add new tasks, delete tasks and mark tasks as complete. |
+| **DOM Element Creation** | The app creates task elements dynamically. It creates buttons for each task and updates the task list on the screen. It also updates the progress display. |
+| **Classes & Subclasses** | A Task class stores the task data and a subclass adds priority features. Overall, classes help organize the code.  |
 
 ---
 
 ## DLC — Additional Topics
 
 ### JSON & Local Storage
-JSON & Local Storage will be used to store the tasks the user enters and  ,  On load, `JSON.parse()` restores the bracket exactly where the user left off. This means no data is lost between sessions without any backend.
+JSON and local storage will be used to store the tasks the user enters and save their progress. The app will convert task data into JSON format when saving.
 
 ---
 
 ## Tech Stack
 
 - HTML, CSS, Vanilla JavaScript
-- MusicBrainz API *(free, no API key required)*
-- `localStorage` for tournament persistence
-- HTML Canvas for bracket rendering
+- `localStorage` for saving tasks and progress
 - VS Code + GitHub
