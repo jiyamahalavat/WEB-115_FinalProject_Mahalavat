@@ -19,7 +19,7 @@ The target users are students, including middle school, high school, and college
 - Mark tasks as complete
 - Delete tasks
 - View tasks in an organized list
-- Visual progress indicator (e.g., completion percentage)
+- *Visual progress indicator (completion percentage)
 - Tasks can be sorted or prioritized
 ---
 
