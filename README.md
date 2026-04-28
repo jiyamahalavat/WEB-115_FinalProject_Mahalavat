@@ -30,7 +30,7 @@ The target users are students, including middle school, high school, and college
 | **If Statements & Loops** |If statements check if a task is complete. If statements assign priority levels. Loops go through all tasks in the list. Those loops update and display tasks. |
 | **Event Listeners** | Event listeners detect button clicks. They add new tasks, delete tasks and mark tasks as complete. |
 | **DOM Element Creation** | The app creates task elements dynamically. It creates buttons for each task and updates the task list on the screen. It also updates the progress display. |
-| **Classes & Subclasses** | A Task class stores the task data and a subclass adds priority features. Overall, classes help organize the code.  |
+| **Classes & Subclasses** | A Task class stores the task data and a subclass adds priority features. |
 
 ---
 
