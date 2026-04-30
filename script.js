@@ -3,55 +3,55 @@ constructor(name, dueDate, priority){
     this.name = name;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.completed = false; //will change to true if the task is completed
+    this.completed = false; //will change to true based on whether the task is completed or not
+    tasks = []; //array that will have tasks in it 
 }
 };
 
 const taskList = document.getElementById("taskList"); //gets taskList 
-const progressText = document.getElementById("progress"); // shows progress in tasks over time
+const progress = document.getElementById("progress"); // shows progress in tasks over time
 
 document.getElementById("addTaskBtn").addEventListener("click", addTasks ); //event listener for button that adds tasks
 
-function addTasks(){ // make function that will add all tasks to do to dashboard
+function addTasks(){ // make function that will add all tasks to-do to dashboard
     const name = document.getElementById("taskName").value;
     const priority = document.getElementById("priority").value;
     const dueDate = document.getElementById("dueDate").value;
 
-    if (name == " "){
-        const newTask = new Task(name, dueFDpriority); //object that creates new task based on what the user enters 
+    if (name === " "){
+        const newTask = new Task(name, dueDate, priority); //object that creates new task based on what the user enters 
     }
 
 }
 
+//complete task
+function completeTask(){
+    task[index].completed = true;
+    saveTasks(); //calling function here -> need to make function to save the tasks
+    displayTasks(); //calling function here to display the tasks -> need to make function for this 
 }
 
-// complete task
-function completeTask(index) {
-  tasks[index].completed = true;
-  saveTasks();
-  displayTasks();
+//delete task
+function deleteTask(){
+    tasks.splice(index,1);
+    saveTasks(); //calling function here -> need to make function to save the tasks
+    displayTasks(); //calling function here to display the tasks -> need to make function for this
 }
 
-// delete task
-function deleteTask(index) {
-  tasks.splice(index, 1);
-  saveTasks();
-  displayTasks();
-}
+//shows progress in tasks
+function updateProgress(){
+    let completedTasks = 0;
 
-// progress
-function updateProgress() {
-  let completed = 0;
+    for(let i = 0; i < tasks.length; i++) { //iterates through all the tasks 
+        if(tasks[i].completed) completed++;
+    }
 
-  for (let i = 0; i < tasks.length; i++) {
-    if (tasks[i].completed) completed++;
-  }
-
-  if (tasks.length === 0) {
-    progressText.textContent = "No tasks yet.";
-  } else {
-    progressText.textContent = "Progress: " + completed + "/" + tasks.length;
-  }
+    if (tasks.length === 0) {
+        progress.textContent = "No tasks yet.";
+    } else {
+        progress.textContent = "Progress:" + completed + "/" + tasks.length; //these many completed out of total
+    }
+};
 
 
 //can use JSON.parse 
