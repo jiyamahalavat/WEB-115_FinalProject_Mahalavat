@@ -23,6 +23,36 @@ function addTasks(){ // make function that will add all tasks to do to dashboard
 
 }
 
+}
+
+// complete task
+function completeTask(index) {
+  tasks[index].completed = true;
+  saveTasks();
+  displayTasks();
+}
+
+// delete task
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  saveTasks();
+  displayTasks();
+}
+
+// progress
+function updateProgress() {
+  let completed = 0;
+
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].completed) completed++;
+  }
+
+  if (tasks.length === 0) {
+    progressText.textContent = "No tasks yet.";
+  } else {
+    progressText.textContent = "Progress: " + completed + "/" + tasks.length;
+  }
+
 
 //can use JSON.parse 
 //Storage.setItem() -> setItem(keyName, keyValue)
