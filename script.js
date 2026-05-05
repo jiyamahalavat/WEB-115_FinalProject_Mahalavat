@@ -24,6 +24,29 @@ function addTasks(){ // make function that will add all tasks to-do to dashboard
 
 }
 
+// display tasks
+function displayTasks() {
+  taskList.innerHTML = "";
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    const div = document.createElement("div");
+    div.className = "task";
+   
+    if (task.completed) div.classList.add("completed");
+    if (task.priority === "High")div.classList.add("high");
+    if (task.priority === "Medium")div.classList.add("medium");
+    if (task.priority === "Low")div.classList.add("low");
+    div.innerHTML = `
+      <p>${task.name} (Due: ${task.dueDate})</p>
+      <button onclick="completeTask(${i})">Complete</button>
+      <button onclick="deleteTask(${i})">Delete</button>
+    ;
+    taskList.appendChild(div);
+  }
+
+  updateProgress();
+}
+
 //complete task
 function completeTask(){
     task[index].completed = true;
