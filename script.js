@@ -39,7 +39,7 @@ function displayTasks() {
     if (task.priority === "High")div.classList.add("high");
     if (task.priority === "Medium")div.classList.add("medium");
     if (task.priority === "Low")div.classList.add("low");
-    div.innerHTML = `
+    div.innerHTML = ` //formatting
       <p>${task.name} (Due: ${task.dueDate})</p>
       <button onclick="completeTask(${i})">Complete</button>
       <button onclick="deleteTask(${i})">Delete</button>
