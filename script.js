@@ -8,6 +8,9 @@ constructor(name, dueDate, priority){
 }
 };
 
+// load saved tasks
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
 const taskList = document.getElementById("taskList"); //gets taskList 
 const progress = document.getElementById("progress"); // shows progress in tasks over time
 
@@ -76,8 +79,10 @@ function updateProgress(){
     }
 };
 
+// save
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-//can use JSON.parse 
-//Storage.setItem() -> setItem(keyName, keyValue)
-// used like this -> localStorage.setItem("image", "myCat.png")
-//there is a fetch API which uses the fetch() method 
+// load on start
+displayTasks();
