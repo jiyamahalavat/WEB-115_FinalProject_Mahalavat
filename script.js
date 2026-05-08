@@ -61,15 +61,15 @@ function displayTasks() {
 //complete task
 function completeTask(){
     task[index].completed = true;
-    saveTasks(); //calling function here -> need to make function to save the tasks
-    displayTasks(); //calling function here to display the tasks -> need to make function for this 
+    saveTasks(); 
+    displayTasks(); 
 }
 
 //delete task
 function deleteTask(){
     tasks.splice(index,1);
-    saveTasks(); //calling function here -> need to make function to save the tasks
-    displayTasks(); //calling function here to display the tasks -> need to make function for this
+    saveTasks(); 
+    displayTasks(); 
 }
 
 //shows progress in tasks
