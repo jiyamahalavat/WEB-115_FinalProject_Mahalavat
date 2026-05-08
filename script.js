@@ -8,6 +8,14 @@ constructor(name, dueDate, priority){
 }
 };
 
+// subclass
+class PriorityTask extends Task {
+  constructor(name, dueDate, priority) {
+    super(name, dueDate, priority);
+    this.important = true;
+  }
+}
+
 // load saved tasks
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
